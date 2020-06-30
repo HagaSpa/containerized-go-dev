@@ -7,6 +7,8 @@ COPY go.* .
 RUN go mod download
 
 FROM base AS build
+# impl by Docker 
+# https://docs.docker.com/buildx/working-with-buildx/#build-multi-platform-images
 ARG TARGETOS
 ARG TARGETARCH
 RUN --mount=target=. \
